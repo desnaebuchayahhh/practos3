@@ -363,12 +363,12 @@ class Customer(User):
         print(f"Покупатель: {self.username} (ID: {self.user_id})")
 
     def add_to_cart(self, item):
-        """Добавляет товар в корзину."""
+        
         self.shopping_cart.append(item)
         print(f"{item.title} добавлен в корзину.")
 
     def view_cart(self):
-        """Отображает товары в корзине."""
+        
         if not self.shopping_cart:
             print("Ваша корзина пуста.")
             return
@@ -578,12 +578,12 @@ class Catalog:
                 self._items[item.item_id] = item
 
     def get_items(self):  
-        """Возвращает все товары в каталоге."""
+       
         return self._items
 
 
 def main():
-    """Основная функция для запуска приложения."""
+   
 
 
     data_storage = JsonDataStorage("music_store_data.json")
@@ -595,7 +595,7 @@ def main():
     catalog = Catalog(data_storage)
 
     def display_menu(user=None):
-        """Отображает меню в зависимости от роли пользователя."""
+        
         print("\n--- Меню музыкального магазина ---")
         if not user:
             print("1. Регистрация")
@@ -616,7 +616,7 @@ def main():
             print("5. Выход из программы")
 
     def handle_user_action(choice, user=None):
-        """Обрабатывает действия пользователя в зависимости от выбора в меню."""
+        
         if not user:  
             if choice == "1":
                 user_id = input("Введите ID пользователя: ")
